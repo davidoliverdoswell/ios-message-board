@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -114,12 +115,66 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="tgJ-4q-DFO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="C8U-2P-C1t"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="C8U-2P-C1t">
+                            <connections>
+                                <segue destination="l79-cy-KfV" kind="show" identifier="showCreateMessage" id="iZc-b0-6i6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ws-41-m0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1772" y="125"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="aVN-gs-CfT">
+            <objects>
+                <viewController id="l79-cy-KfV" customClass="MessageDetailViewController" customModule="ios_message_board" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WWe-Mz-cL7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="13m-hc-k6R">
+                                <rect key="frame" x="16" y="144" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xdd-QJ-eFE">
+                                <rect key="frame" x="16" y="182" width="343" height="465"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xdd-QJ-eFE" firstAttribute="top" secondItem="13m-hc-k6R" secondAttribute="bottom" constant="8" id="1Mg-FX-aI9"/>
+                            <constraint firstItem="xdd-QJ-eFE" firstAttribute="leading" secondItem="g9Z-U2-c6N" secondAttribute="leading" constant="16" id="EEq-FX-7XG"/>
+                            <constraint firstItem="13m-hc-k6R" firstAttribute="leading" secondItem="g9Z-U2-c6N" secondAttribute="leading" constant="16" id="F2V-EI-R6b"/>
+                            <constraint firstItem="g9Z-U2-c6N" firstAttribute="bottom" secondItem="xdd-QJ-eFE" secondAttribute="bottom" constant="20" id="Gdk-HD-SdT"/>
+                            <constraint firstItem="13m-hc-k6R" firstAttribute="top" secondItem="g9Z-U2-c6N" secondAttribute="top" constant="28" id="IXe-qj-bGm"/>
+                            <constraint firstItem="g9Z-U2-c6N" firstAttribute="trailing" secondItem="13m-hc-k6R" secondAttribute="trailing" constant="16" id="Vfj-KJ-KNx"/>
+                            <constraint firstItem="xdd-QJ-eFE" firstAttribute="top" secondItem="13m-hc-k6R" secondAttribute="bottom" constant="8" id="hfd-Wi-cIx"/>
+                            <constraint firstItem="g9Z-U2-c6N" firstAttribute="trailing" secondItem="xdd-QJ-eFE" secondAttribute="trailing" constant="16" id="jSI-W4-EbI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g9Z-U2-c6N"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="JSB-T2-2FB">
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="wsL-wS-vZS">
+                            <connections>
+                                <action selector="sendButton:" destination="l79-cy-KfV" id="SmR-fp-UZm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="13m-hc-k6R" id="0XU-N2-9w4"/>
+                        <outlet property="textView" destination="xdd-QJ-eFE" id="HVn-o3-KOe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKn-cg-MrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517.5999999999999" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VVG-J4-SaJ">
