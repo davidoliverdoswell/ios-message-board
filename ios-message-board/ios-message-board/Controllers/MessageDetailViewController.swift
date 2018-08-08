@@ -15,8 +15,8 @@ class MessageDetailViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     @IBAction func sendButton(_ sender: Any) {
+        
     }
-    
     
 
     override func viewDidLoad() {
