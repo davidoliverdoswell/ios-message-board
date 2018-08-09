@@ -46,4 +46,40 @@ class MessageThreadController {
             
         }.resume()
     }
+    
+    func createMessage(with messageThread: MessageThread, text: String, sender: String, completion: @escaping (Error) -> Void) {
+        
+        let messageThreadMessage = MessageThread.Message(text: text, sender: sender, timestamp: Date())
+        
+        let url = MessageThreadController.baseURL
+        .appendingPathExtension(messageThread.identifier)
+        .appendingPathComponent("messages")
+        .appendingPathExtension("json")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(messageThreadMessage)
+        } catch {
+            NSLog("Error \(error)")
+            completion(error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error: \(error)")
+                completion(error)
+                return
+            }
+            self.messageThreads.append(messageThread)
+            completion(NSError())
+            return
+            
+        }.resume()
+        
+    }
+    
 }
