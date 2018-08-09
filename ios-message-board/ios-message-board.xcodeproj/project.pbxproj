@@ -15,6 +15,7 @@
 		051E41F7211BAF10008BFAE6 /* MessageThreadDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E41F6211BAF10008BFAE6 /* MessageThreadDetailTableViewController.swift */; };
 		051E41F9211BB102008BFAE6 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E41F8211BB102008BFAE6 /* MessageDetailViewController.swift */; };
 		051E41FB211BB21C008BFAE6 /* MessageThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E41FA211BB21C008BFAE6 /* MessageThread.swift */; };
+		051E41FE211BB6E9008BFAE6 /* MessageThreadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E41FD211BB6E9008BFAE6 /* MessageThreadController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		051E41F6211BAF10008BFAE6 /* MessageThreadDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadDetailTableViewController.swift; sourceTree = "<group>"; };
 		051E41F8211BB102008BFAE6 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		051E41FA211BB21C008BFAE6 /* MessageThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThread.swift; sourceTree = "<group>"; };
+		051E41FD211BB6E9008BFAE6 /* MessageThreadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				051E41E3211BA606008BFAE6 /* Main.storyboard */,
 				051E41EB211BA608008BFAE6 /* Info.plist */,
 				051E41F5211BA703008BFAE6 /* Models */,
+				051E41FC211BB6C0008BFAE6 /* Model Controller */,
 				051E41F4211BA6FC008BFAE6 /* Views */,
 				051E41F3211BA6EE008BFAE6 /* Controllers */,
 			);
@@ -95,6 +98,14 @@
 				051E41FA211BB21C008BFAE6 /* MessageThread.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		051E41FC211BB6C0008BFAE6 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				051E41FD211BB6E9008BFAE6 /* MessageThreadController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 				051E41F7211BAF10008BFAE6 /* MessageThreadDetailTableViewController.swift in Sources */,
 				051E41FB211BB21C008BFAE6 /* MessageThread.swift in Sources */,
 				051E41E0211BA606008BFAE6 /* AppDelegate.swift in Sources */,
+				051E41FE211BB6E9008BFAE6 /* MessageThreadController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
